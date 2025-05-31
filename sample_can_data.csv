@@ -1,0 +1,19 @@
+Timestamp,ArbitrationID,IsExtendedID,IsRemoteFrame,DLC,Data
+1678886400.123,100,False,False,8,0102030405060708
+1678886400.223,1A2B3C4D,True,False,4,AABBCCDD
+1678886400.323,200,False,True,0,
+1678886400.423,BAD_ID,False,False,8,0102030405060708
+1678886400.523,300,False,False,8,DEADBEEFDEADBEEF
+1678886400.623,400,False,False,2,0102,ExtraColumn
+1678886400.723,500,True,False,1,FF
+# This is a comment line, should be handled or will cause error if not skipped by logic
+1678886400.823,600F,false,false,3,112233
+1678886400.923,700,true,false,0, # Empty data
+1678886401.023,FFF,False,False,8,0011223344556677
+1678886401.123,123,bogus_boolean,False,8,0102030405060708
+1678886401.223,NOTHEX,True,False,4,AABBCCDD
+1678886401.323,12345,True,False,not_an_integer,AABBCCDD
+1678886401.423,111,True,False,3,NOTHEXDATA
+1678886401.523,222 # Not enough columns
+1678886401.623,333,True,True,0, # Remote frame with data (unusual but test)
+1678886401.723,444,False,False,5,010203040506 # Data length vs DLC mismatch (DLC column not used currently)
